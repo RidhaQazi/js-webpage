@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+    <link rel="stylesheet" href="index.css">
+
+    <script>
+        function col()
+            {
+                //alert("This is internal JS");
+                let col = document.querySelector(".inline");
+                let body = document.querySelector("body");
+                col.style.color = "red";
+                col.style.backgroundColor = "black";
+
+            }
+   </script>
+</head>
+<body>
+
+    <h1>Different Approaches In JS</h1>
+
+    <pre class="one">
+
+    <h2>Different approaches to place JS in HTML</h2>
+    
+    <h4>.Inline JavaScript : </h4>
+            Inline JavaScript refers to JavaScript code that is embedded directly within an HTML document,
+            typically within HTML tags such as "script", <a>, or event handler attributes like onclick. 
+            This contrasts with external JavaScript, which is written in separate .js files and linked to the HTML document.
+
+            <b>Eg:</b> <button onclick="alert('This is inline JS')">Click Me</button>
+
+    <h4>.Internal JavaScript: </h4>
+             JavaScript can be added directly to the HTML file by writing the code inside 
+             the "script" tag . We can place the "script" tag  either inside <head> or the <body> tag  
+             according to the need.
+
+            <b>Eg:</b> <input type="button" value="Click Me" class="inline" onclick="col()"/>    
+
+    <h4>.External JavaScript: </h4>
+             The other way is to write JavaScript code in another file having a .js extension and then link 
+             the file inside the <head> or <body> tag of the HTML file in which we want to add this code.
+
+            <b>Eg:</b> <button id="mode">Click Me</button>
+            
+    </pre>
+
+
+    <pre class="two"> 
+
+    <h2>Advantages and Disadvantages of each approach</h2>
+
+    <h4>.Inline JS</h4>
+
+    <b><u>--> Advantages of using Inline JS: </u></b>
+
+. Easy to implement for small scripts or quick tasks.
+. Can be added directly within HTML tags, making it straightforward for small-scale or simple projects.
+. Runs immediately when the HTML element is parsed, making it useful for certain dynamic content that needs to load instantly.
+. Embedding JavaScript directly in the HTML can reduce the number of HTTP requests, potentially improving page load time for very small scripts.
+
+    <b><u>--> Disadvantages of inline JS: </u></b>
+
+. Harder to maintain and update, especially as the complexity of the script grows.
+. Mixing JavaScript with HTML can make the code less readable and harder to debug.
+. Repeating the same inline scripts across multiple HTML elements or pages can lead to code duplication.
+. Inline event handlers can be an attack vector if user input is not properly handled.
+
+    <h4>.Internal JS</h4>
+    
+    <b><u>--> Advantages of using Internal JS: </u></b>
+
+. Browser does not have to make an extra HTTP request for JavaScript code.
+. Easy to prototype and test small scripts quickly without managing multiple files.
+. For small projects or single-page applications, internal JavaScript can simplify development by keeping all related code in one place.
+. It does not allow caching.
+
+    <b><u>--> Disadvantages of Internal JS: </u></b>
+
+. As the project grows, managing JavaScript within the HTML file can become cumbersome and difficult to maintain.
+. Internal scripts can lead to cluttered and less readable HTML files.
+. Internal JavaScript is not reusable across multiple HTML files. If the same script is needed on different pages, it must be duplicated, which leads to code redundancy.
+. Managing changes through version control systems (e.g., Git) can be more challenging when JavaScript is embedded within HTML files. 
+
+    <h4>.External JS</h4>
+    
+    <b><u>-->Advantages of using External JS: </u></b>
+
+. HTML and JavaScript files become more readable and easy to maintain.
+. Allows the same script to be reused across multiple web pages, reducing redundancy and saving development time.
+. Page loads speed up due to Cached JavaScript files.
+. Encourages modular programming practices, making it easier to structure and manage large codebases.
+
+
+    <b><u>-->Disadvantages of External JS:  </u></b>
+
+. Coders can easily download your code using the url of the script(.js) file.
+. If the external JS file is hosted on a slow or unreliable server, it can impact the performance and availability of your web page.
+. If the external JS file is hosted on a third-party server, it introduces security risks such as script injection attacks.
+. An extra HTTP request is made by the browser to get this JavaScript code.
+        
+    </pre>
+
+    <script src="index.js"></script>
+</body>
+</html>
